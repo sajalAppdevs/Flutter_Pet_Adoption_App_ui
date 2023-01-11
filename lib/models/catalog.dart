@@ -1,18 +1,19 @@
 import 'dart:convert';
 
 class CatalogModel {
-  static List<Item> items = [
-    Item(
-        id: 1,
-        name: "iPhone 12 Pro",
-        desc: "Apple iPhone 12th generation",
-        price: 999,
-        color: "#33505a",
-        image:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRISJ6msIu4AU9_M9ZnJVQVFmfuhfyJjEtbUm3ZK11_8IV9TV25-1uM5wHjiFNwKy99w0mR5Hk&usqp=CAc")
-  ];
+  static List<Item> items=[];
+  //  = [
+  //   Item(
+  //       id: 1,
+  //       name: "Cheero",
+  //       desc: "Apple iPhone 12th generation",
+  //       price: 999,
+  //       color: "#33505a",
+  //       image:
+  //           "https://res.cloudinary.com/dic3o7vzw/image/upload/v1673352526/avatars/dog0_figns7.jpg")
+  // ];
   // Get Item by ID
- Item getById(int id) =>
+  Item getById(int id) =>
       items.firstWhere((element) => element.id == id, orElse: null);
 
   // Get Item by position
@@ -66,7 +67,8 @@ class Item {
   }
 
   factory Item.fromMap(Map<String, dynamic> map) {
-    // if (map == null) return null;
+     // ignore: unnecessary_null_comparison
+    //  if (map == null) return null;
 
     return Item(
       id: map['id'],

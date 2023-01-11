@@ -12,14 +12,19 @@ class ItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Card(
+    return Card(
       child: ListTile(
         onTap: () {
           print("${item.name} pressed");
         },
         leading: Image.network(item.image),
         title: Text(item.name),
-        subtitle: Text(item.desc),
+        subtitle: Expanded(
+            child: Text(
+          item.desc,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+        )),
         trailing: Text(
           "\$${item.price}",
           textScaleFactor: 1.5,
